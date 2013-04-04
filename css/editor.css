@@ -1,0 +1,9 @@
+/* Stylesheet / CSS */
+input {
+background-color: red;
+  border: 1px solid #CCC;
+}
+
+body.wp-editor {
+  background-color: red;
+}

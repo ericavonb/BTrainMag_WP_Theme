@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<wp_option_tree>
+  <row>
+    <id>1</id>
+    <item_id>general_default</item_id>
+    <item_title>Overview</item_title>
+    <item_desc></item_desc>
+    <item_type>heading</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>2</id>
+    <item_id>textblock_overview</item_id>
+    <item_title>Overview</item_title>
+    <item_desc>Please explore the settings on this page to control the various areas of the site. Read the full documentation to find out which settings can be overridden per post or page.</item_desc>
+    <item_type>textblock</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>3</id>
+    <item_id>heading_heading</item_id>
+    <item_title>Heading</item_title>
+    <item_desc></item_desc>
+    <item_type>heading</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>4</id>
+    <item_id>logo_upload</item_id>
+    <item_title>Logo Upload</item_title>
+    <item_desc>IMPORTANT: Read the OptionTree documentation in the menu on the proper way to upload, you need to click - insert into post.</item_desc>
+    <item_type>upload</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>5</id>
+    <item_id>logo_url</item_id>
+    <item_title>Logo URL</item_title>
+    <item_desc>Enter full URL to logo, ex: http://dummyimage.com/200x60</item_desc>
+    <item_type>input</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>6</id>
+    <item_id>logo_area_size</item_id>
+    <item_title>Logo Area Size</item_title>
+    <item_desc>Choose the layout of the logo and menu area to accommodate your logo size.</item_desc>
+    <item_type>select</item_type>
+    <item_options>tiny,small,medium,large</item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>7</id>
+    <item_id>heading_footer</item_id>
+    <item_title>Footer</item_title>
+    <item_desc></item_desc>
+    <item_type>heading</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>8</id>
+    <item_id>footer_layout</item_id>
+    <item_title>Footer Layout</item_title>
+    <item_desc>Enter widgets first into the footer areas in appearance &amp;gt; widgets first and then control the layout using this field.</item_desc>
+    <item_type>select</item_type>
+    <item_options>001 - 3 Equal Columns (default),002 - 2 Even Columns, 003 - 3 Uneven Columns,004 - 4 Equal Columns</item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>9</id>
+    <item_id>heading_blog</item_id>
+    <item_title>Blog</item_title>
+    <item_desc></item_desc>
+    <item_type>heading</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>10</id>
+    <item_id>textblock_blog_overview</item_id>
+    <item_title>Overview</item_title>
+    <item_desc>Blog refers to the page you have set under Settings &amp;gt; Reading &amp;gt; Posts Page. (index.php template)</item_desc>
+    <item_type>textblock</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>11</id>
+    <item_id>nth_post_widget</item_id>
+    <item_title>Nth Post Widget</item_title>
+    <item_desc>Enter a number or comma separated list of numbers for the Nth widget widget area to appear in the post loop. For example, entering 1,2,3 will make the widget area appear after the first, second and third posts. Defaults to 1.</item_desc>
+    <item_type>input</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>12</id>
+    <item_id>heading_colors</item_id>
+    <item_title>Colors</item_title>
+    <item_desc></item_desc>
+    <item_type>heading</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>13</id>
+    <item_id>color_link_primary</item_id>
+    <item_title>Primary Link Color</item_title>
+    <item_desc></item_desc>
+    <item_type>colorpicker</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+  <row>
+    <id>14</id>
+    <item_id>color_link_primary_hover</item_id>
+    <item_title>Primary Link Hover</item_title>
+    <item_desc></item_desc>
+    <item_type>colorpicker</item_type>
+    <item_options></item_options>
+    <item_sort>0</item_sort>
+  </row>
+     <id>15</id>
+     <item_id>logo_text_based</item_id>
+     <item_title>Text Based Logo</item_title>
+     <item_desc></item_desc>
+     <item_type>input</item_type>
+     <item_options></item_options>
+     <item_sort>0</item_sort>
+ </row>
+</wp_option_tree>

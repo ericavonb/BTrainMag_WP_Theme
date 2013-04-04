@@ -1,0 +1,69 @@
+<!-- Source: loop-home.php -->
+<?php
+  	// Grab some theme settings 
+  	global $btm_theme_options;
+  	$nth_post_widget = btm_get_option( get_option_tree('nth_post_widget', $btm_theme_options, false, false ), 1, false ); 
+  	$nth_post_widget = explode( ',', $nth_post_widget );
+?>
+<div class="main_container clearfix">
+<?php // The loop that displays posts. ?>  
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('posts-loop-above') ) : endif; ?>
+
+<?php $categories = get_categories(array('hide_empty' => 0, 'exclude' => '1', 'orderby' => 'term_group')); ?>
+<?php $usedPosts = array(); ?>
+<?php foreach($categories as $cat) : ?>
+    <?php $args = 'cat=' . $cat->cat_ID . '&posts_per_page=-1&orderby=DATE'; ?>
+      
+    <?php $my_query = new WP_Query($args); ?>
+    <?php if ( $my_query->have_posts() ) : ?>
+      <div class="category-container" id="<?php echo $cat->name; ?>-container">
+        <h1 class="category-label"><a href="<?php echo get_category_link($cat->cat_ID); ?>">
+        <?php echo $cat->name; ?></a></h1>
+     	<?php $postcount = 0; ?>
+     	<?php $count = 0; ?>
+    	<?php while ( $my_query->have_posts() ) : ?>
+    	    <?php $my_query->the_post(); ?>
+    	    <?php if (in_array($post->ID, $usedPosts)) {
+    	      continue;
+    	    }; ?>
+    	    <?php if ($count > 1) {
+    	      break;
+    	    }; ?>
+    	    <?php $count = $count + 1; ?>
+    	    <?php array_push($usedPosts, $post->ID); ?>
+      		  <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>			
+
+        			<?php //echo btm_get_featured_image( 'grid_3', '' ); ?>	
+
+        			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'btm' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+        			
+        			<?php if (has_post_thumbnail()){ ?>	
+                <div class="thumbnail-image" style="background-image: url('<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')[0]; ?>');"></div>
+        			<?php } else { ?>
+        		    <div class="entry-excerpt">
+          				<?php the_excerpt( __( 'Read More...', 'btm' ) ); ?>
+          				<!--<a href="<?php echo get_permalink(); ?>"> Read More...</a> -->
+          			</div><!--//entry-content -->
+          		<?php }; ?>
+          		<?php get_template_part( 'meta', 'home' ); ?>
+        		</div><!--//post-->
+      		
+        		<?php 
+        			if ( in_array($postcount, $nth_post_widget ) ) {
+        				if ( is_active_sidebar( 'nth-post' ) ) { 
+        					dynamic_sidebar( 'nth-post' );
+        				} 
+        			} 
+        		?>
+    	  <?php endwhile; // End the loop. ?>
+
+    	</div>
+    	
+    <?php endif; ?>
+    <?php wp_reset_postdata(); ?> 
+    
+  <?php endforeach; ?>
+  
+  </div>
+
+
