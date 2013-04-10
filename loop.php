@@ -17,12 +17,10 @@
 
   			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'btm' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?>
   			</a></h2> 
-  			<?php if (has_post_thumbnail()) {
-			          $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
-			   ?>
-  			<a href="<?php the_permalink(); ?>" class="thumbnail-image" style="background-image: url('<?php echo $src[0]; ?>');">
-          </a>
-          <?php }; ?>
+  			<?php if (has_post_thumbnail()) { 
+			?>
+			  <?php echo btm_get_featured_image( 'small' , '' ); ?>
+			<?php }; ?>
   			<div class="entry-excerpt">
   				<?php the_excerpt( __( 'Read More...', 'btm' ) ); ?>
   			</div><!--//entry-content -->

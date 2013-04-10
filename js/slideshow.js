@@ -1,7 +1,6 @@
 
 
-(function(){
-   
+(function($){
    var autoslide;
    var delay;
    
@@ -94,4 +93,4 @@
 
 
 
-})();
+})(jQuery);

@@ -175,12 +175,10 @@ function btm_page_link($page, $cat) {
 
 
 
-
-
-
-
-
-
+$content = add_filter('the_content', 'content');
+function content($content) {
+  return preg_replace('/<p>([^a-zA-Z]*[a-zA-Z])/', '<div class="first_letter">${1}</div><p>', $content, 1);
+};
 
 
 

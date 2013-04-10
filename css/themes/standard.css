@@ -1,44 +1,18 @@
+/* ========================================================================= */
+/*           Style for standard pages (ie without main slideshow)            */
+/* ========================================================================= */
 
-#outer {
-	width: 100%;
-	margin: 0px auto 0px auto;
-	padding: 0;
-	overflow: hidden;
-}
-.main_container {
-  width: 740px;
-  margin: 0px auto;
-  position:relative;
-}
-#top {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin: 0px 0px 0px 0px;
-    height: 90px;
-    z-index: 0;
-    height: 0px;
-}
 header {
-  height: 50px;
-  background-color: #000;
+  min-height: 45px;
   z-index: 10;
   min-width: 1300px;
 }
 #logo {
-    padding: 0px;
-    background-color: #000;
     text-align: left;
+    border: none;
 }
 #logo a {
-    color: #fff;
-    text-transform: uppercase;
-    line-height: 45px;
-    font-family: 'Anton', Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 400;
     font-size: 45px;
-    margin: 0px;
-    padding: 0px;
 }
 .menu_left {
   margin: 0px 50px;
@@ -47,52 +21,29 @@ header {
   float: left;
 }
 .menu_right {
-  
-  height: 45px;
-  display: block;
-  float: left;
+    display: block;
+    float: left;
+    background: none;
+    padding-top: 10px;
 }
-.menu-main-menu-container {
-    height: 35px;
-    background-color: rgba(255,255,255, 0.0);
-    -webkit-box-shadow:  0px 0px 5px 1px rgba(0, 0, 0, .5);
-    box-shadow:  0px 0px 5px 1px rgba(0, 0, 0, .5);
-}
-
 .sf-menu {
-    list-style: none;
-    padding: 8px 0px;
     float: right;
-    height: 35px;
-}
-.sf-menu li {
-  height: 35px;
-  display: block;
 }
 .sf-menu li a {
     color: #fff;
     padding: 0px 10px;
     font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    border-bottom: 5px solid rgba(255, 255, 255, 0.0);
-    text-decoration:none;
-    letter-spacing: 1px;
-    text-transform:uppercase;
     height: 35px;
-    display: block;
-    z-index: 100;
 }
 .social-links {
   position: absolute;
-  top: 50px;
+  top: 45px;
   right: 0px;
   margin: 0px;
   padding: 0px;
   z-index: 100;
 }
 .author .category-name {
-  
   width: 100%;
   background: none;
   float: left;
@@ -104,26 +55,25 @@ header {
   width: 100%;
   background: none;
   float: left;
-  height: 100px;
+  height: 105px;
   overflow: hidden;
+  border-bottom: 1px dotted rgba(0,0,0,0.4);
+  background-color: rgba(255,255,255, 0.9);
 }
-.category .category-name h1
+.category-name h1
 {
   text-align: center;
   font-size: 120px;
   text-transform: uppercase;
   font-family: 'Anton', Helvetica, Arial, "Lucida Grande", sans-serif;
-  height: 88px;
-  line-height: 80px;
+  height: 95px;
+  line-height: 93px;
   color: rgba(63, 171, 250, 1.0);
-  padding: 5px 0px 0px 0px;
-  clear: both;
-  width: 100%;
-  margin: 5px auto 0px auto;
-  background-color: rgba(255,255,255, 0.9);
+  padding: 5px 0px 2px 0px;
+  margin: 0 auto;
   border: none;
 }
-.author category-name h1 {
+.author .category-name h1 {
   
   text-align: center;
   font-size: 120px;
@@ -142,6 +92,7 @@ header {
 .content_1 {
   padding-top: 30px;
 }
+
 #posts {
   width: 740px;
   float: left;
@@ -155,10 +106,6 @@ header {
   position: relative;
   padding: 20px 0px 0px 0px;
   min-height: 198px;
-}
-.post-date, .byline, .comments {
-  float: left;
-  margin-right: 30px;
 }
 
 a.post-thumbnail, .post-thumbnail, .thumbnail-image, a.thumbnail-image {
@@ -180,25 +127,16 @@ a.post-thumbnail, .post-thumbnail, .thumbnail-image, a.thumbnail-image {
 }
 
 #aside {
-  float: left;
+  float: right;
   width: 200px;
-  padding: 20px 20px;
-  margin: 20px 0px 20px 50px;
-  
-  border-radius: 2px;
-  box-shadow: 0px 1px 15px #000;
-  -moz-box-shadow: 0 0 1px #000;
-  -webkit-box-shadow: 0px 1px 15px #000;
-}
-#aside h3 {
-  margin-bottom: 10px;
-  font-weight: normal;
+  padding: 20px;
+  margin: 20px 0px 20px 0px;
+  border-left: 1px dotted rgba(0,0,0,0.6)
 }
 
-
-h1 {
+#aside h3, #aside h3 a, h1 {
   padding: 10px 0px;
-  margin: 0px 5px;
+  margin: 0px;
   border-top: 3px solid black;
   text-transform: uppercase;
   font-family: 'Anton', Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -206,6 +144,12 @@ h1 {
   line-height: 30px;
   position: relative;
   
+}
+#aside a:hover {
+    color: rgba(63, 171, 250, 1.0);
+}
+#aside a {
+    color: rgba(224, 55, 138, 1.0);
 }
 h1 a {
   padding: 0;
@@ -284,4 +228,109 @@ h2 {
   left: 0px;
   width: 100%;
   text-align: right;
+}
+
+.single h1#category {
+    width: 1100px;
+}
+.single #primary iframe {
+margin: 30px -45px 30px 45px;
+display: block;
+}
+.single #main {
+  background-color: rgba(255,255,255,0.9);
+  padding: 30px 0px;
+}
+.single .entry-meta {
+    border-bottom: 1px dotted #666;
+}
+.single a:hover, .single .post_content a:hover {
+    color: rgba(63, 171, 250, 1.0);
+}
+.single .byline a, .single .post-comment-link a, .single .entry-content a, .single .entry-meta a {
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px dotted #666;
+}
+.single .byline, .single .post-date, .single .post-categories, .single a.post-edit-link {
+    margin-bottom: 20px;
+    float: left;
+    margin-right: 10px;
+}
+.single .post-comment-link {
+
+    margin-bottom: 20px;
+    float: right;
+}
+.single .on {
+
+    margin-bottom: 50px;
+    float: left;
+    margin: 0px 10px;
+}
+.single .cont{
+  margin: 0px auto;
+  display: block;
+  width: 1140px;
+}
+.single #aside {
+  margin: 20px;
+  float: right;
+}
+.single .post {
+  position: relative;
+  padding: 0px 0px 0px 15px;
+  float: left;
+  width: 780px;
+}
+.single .post_content {
+
+  margin: 20px 10px 20px 100px;
+  border-top: 1px dotted #666;
+}
+.single h2 {
+  padding: 20px 0px 10px 0px;
+  font-size: 25px;
+}
+.single #fcbk_share {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100px;
+  height: 100px;
+}
+
+.single .post-thumbnail  {
+  margin: 0px auto 20px auto;
+  padding: 0px;
+  height: 345px;
+  display: block;
+  width: 100%;
+  position: relative;
+  top: 0px;
+  float: none;
+  background-color: #111;
+}
+.single .post-thumbnail img {
+    border: none;
+}
+.single .post-thumbnail a {
+  margin: 0 auto;
+  display: block;
+  width: 670px;
+  height: 345px;
+  overflow: hidden;
+}
+.single .entry-content {
+  margin: 50px 150px 0px 50px;
+  padding: 0px 0px 20px 0px;
+}
+
+.first_letter {
+    font-size: 100px;
+    float: left;
+    padding: 0px 10px 0px 0px;
+    height: 70px;
+    line-height: 70px;
+    color: rgba(63, 171, 250, 1.0);
 }

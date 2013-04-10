@@ -27,25 +27,27 @@
   	<link type="text/css" rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/screen.css" media="screen" />	
   	<?php /* Dynamic CSS from Theme Settings */ include_once(TEMPLATEPATH . "/css/dynamic-css.php"); ?>
   	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	
-  	<?php if (is_front_page()) { $theme = 'slideshow.php';} else { $theme = 'standard.css';}; ?>
+  	<?php if (is_front_page()) { $theme = 'slideshow.css';} else { $theme = 'standard.css';}; ?>
   	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/themes/<?php echo $theme; ?>" />
-  	<?php /* Dynamic CSS from Theme Settings */ if (is_front_page()) { include_once(TEMPLATEPATH . "/css/themes/slideshow-css.php");}; ?>
-	
   	<link href='http://fonts.googleapis.com/css?family=Anton|Oswald:400,300,700|Titillium+Web:400,700|Orbitron:400,700,900' rel='stylesheet' type='text/css'>
-  		<!-- // Load stylesheets -->
+  	<!-- // Load stylesheets -->
 
+  	<!-- Load javascript -->
   	<?php
-  		// Load Javascript
+  		// Load Javascript $handle, $src, $deps, $ver, $in_footer 
   		if ( is_singular() && get_option( 'thread_comments' ) )	{ wp_enqueue_script( 'comment-reply' ); }
   		wp_enqueue_script("jquery");
+  		if ( is_front_page() ) { 
+	             wp_enqueue_script("slideshow", get_template_directory_uri() . "/js/slideshow.js", array("jquery"), NULL, TRUE); 
+	        };
   		wp_enqueue_script("slides", get_template_directory_uri() . "/js/libs/slides.min.jquery.js");
-  		wp_enqueue_script("superfish", get_template_directory_uri() . "/js/libs/superfish-combined.js");
-  		wp_enqueue_script("btm_general", get_template_directory_uri() . "/js/script.js");
+  		/* wp_enqueue_script("superfish", get_template_directory_uri() . "/js/libs/superfish-combined.js");
+  		 wp_enqueue_script("btm_general", get_template_directory_uri() . "/js/script.js"); */
   		wp_head(); // do not remove this
   	?>	
   	<!--[if lt IE 9]><script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script><![endif]-->
-	
+	<!-- // Load javascript -->
+
   	<!-- site icons -->
   	<link type="text/css" rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.jpg" />
   	<link type="text/css" rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.jpg" />

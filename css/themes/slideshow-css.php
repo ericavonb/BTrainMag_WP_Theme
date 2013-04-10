@@ -1,26 +1,9 @@
-<?php
-  include(dirname(dirname(__FILE__)) .'/settings.php');
 
-  $dynamic_css_output = "";
-  
-  $args = array(
-    'offset' => 0,
-    'meta_key' => 'featured',
-    'suppress_filters' => false 
-    );
-    
-// slideshow size, width by height in pixels
-  $size = array( 950, 400);
-  
-// number of slides in the slideshow  
-  $number = count(get_posts(array('meta_key' => 'featured','suppress_filters' => false)));
-
-  ob_start();
-  
-  ?>
+/* ========================================================================= */
+/*                Style for pages with a slideshow, ie home                  */
+/* ========================================================================= */
 
 header {
-  
   z-index: 100;
 }
 /*container for top of content, slideshow*/
@@ -29,62 +12,42 @@ header {
     overflow: hidden;
     position: relative;
     margin: 0px 0px 0px 0px;
-    height: <? echo $size[1] + 170; ?>px;
-
+    height: 570px;
 }
 
-#logo {
+#logo, h1#logo {
     position: relative;
     width: 100%;
-    background-color: #000;
     text-align: center;
     overflow: hidden;
-    padding: 0;
 }
-
 #logo a {
-    color: #fff;
-    text-transform: uppercase;
     line-height: 115px;
-    font-family: 'Anton', Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 400;
     font-size: 115px;
-    margin: 0px;
-    padding: 0px;
 }
-
-
-.sf-menu li a {
-    color: black;
-    padding: 0px 18px;
-    font-size: 1.4em;
-    font-weight: 600;
-    text-align: center;
-    border-bottom: 5px solid rgba(255, 255, 255, 0.9);
-    text-decoration:none;
-    letter-spacing: 1px;
-    text-transform:uppercase;
-}
-
-.menu-main-menu-container {
-    height: 40px;
-    display: block;
+.menu_right {
+    width: 100%;
+    position: relative;
     background-color: rgba(255,255,255, 0.9);
-    -webkit-box-shadow:  0px 0px 5px 1px rgba(0, 0, 0, .5);
-    box-shadow:  0px 0px 5px 1px rgba(0, 0, 0, .5);
 }
-
+.menu-main-menu-container {
+    margin: 0 auto;
+    width: 1040px;
+    overflow: visible;
+    position: relative;
+}
 .sf-menu {
-    list-style: none;
-    padding: 0px;
-    width: 1060px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
-
+.sf-menu li a {
+    color: #000;
+    padding: 3px 18px 0px 18px;
+    font-size: 20px;
+}
 .main_container {
-  width: <?php echo $width - 20; ?>px;
+  width: 1120px;
   margin: 0px auto;
   position:relative;
   padding: 20px 10px;
@@ -92,8 +55,8 @@ header {
 
 /*Slideshow main container*/
 .slideshow {
-    width: <? echo $size[0]; ?>px;
-    height: <? echo $size[1]; ?>px;
+    width: 950px;
+    height: 400px;
     padding: 0px;
     margin: 0px auto 0px auto;
     
@@ -108,13 +71,13 @@ header {
   top: 0px;
   background-color: rgba(200, 200, 200, 0.3);
   width: 100px;
-  height: <? echo $size[1];?>px;
+  height: 400px;
   z-index: 100;
 }
 /*background-image: url('http://localhost:8888/wp-content/uploads/2013/02/pattern.png');*/
 #center {
-  width: <? echo $size[0]; ?>px;
-  height: <? echo $size[1]; ?>px;
+  width: 950px;
+  height: 400px;
   z-index: 10;
   position: relative;
   
@@ -128,7 +91,7 @@ header {
   top: 0px;
   background-color: rgba(255, 255, 255, 0.3);
   width: 100px;
-  height: <? echo $size[1]; ?>px;
+  height: 400px;
   z-index: 100;
 }
 
@@ -144,7 +107,7 @@ header {
 
 .slideshow-about {
   margin: 10px auto;
-  width: <?php echo $width - 20; ?>px;
+  width: 1120px;
   list-style: none;
   position: relative;
   height:180px;
@@ -163,15 +126,15 @@ ul.slides {
     list-style: none;
     margin: 0px;
     padding: 0px;
-    width: <? echo $size[0]; ?>px;
-    height: <? echo $size[1]; ?>px;
+    width: 950px;
+    height: 400px;
 }
 
 /*The slides*/
 .slide-img {
     float: left;
-    width: <? echo $size[0]; ?>px;
-    height: <? echo $size[1]; ?>px;
+    width: 950px;
+    height: 400px;
     position: relative;
     margin: 0px;
     left: 0px;
@@ -182,8 +145,8 @@ ul.slides {
 
 .slideshow-image-container, a.slideshow-image-container {
   background-size: 100% auto;
-  width: <? echo $size[0]; ?>px;
-  height: <? echo $size[1]; ?>px;
+  width: 950px;
+  height: 400px;
   background-position: center top;
   display: block;
 }
@@ -230,9 +193,9 @@ ul.slides {
   padding: 0px;
   border: none;
   width: 100px;
-  height:<?php echo $size[1]?>px;
+  height:400px;
   background: none;
-  background-image: url('<?php echo get_template_directory_uri(); ?>/images/arrow-left.png');
+  background-image: url('/wp-content/themes/magazine/images/arrow-left.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 20px 50px;
@@ -247,9 +210,9 @@ ul.slides {
   padding: 0px;
   border: none;
   width: 100px;
-  height:<?php echo $size[1]?>px;
+  height: 0px;
   background: none;
-  background-image: url('<?php echo get_template_directory_uri(); ?>/images/arrow-right.png');
+  background-image: url('/wp-content/themes/magazine/images/arrow-right.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 20px 50px;
@@ -260,7 +223,7 @@ ul.slide-nav {
     left: 0px;
     bottom: 0px;
     list-style: none;
-    width: <?php echo $width - 20; ?>px;
+    width: 1120px;
     margin: 0px auto 0px auto;
     padding: 0px;
     height: 10px;
@@ -273,7 +236,7 @@ li.slide-nav-item {
     margin: 0px;
     padding: 0px;
     height: 10px;
-    width: <?php echo (($width - 20) / $number); ?>px;
+    width: 224px;
     position: relative;
     
 }
@@ -330,19 +293,19 @@ li.slide-nav-item {
   font-size: 13px;
   border-style: solid;
   border-width: 0px 2px 0px 0px;
-  -moz-border-image: url('<?php echo get_template_directory_uri(); ?>/images/border.png') 0 2 0 2 repeat;
-  -webkit-border-image: url('<?php echo get_template_directory_uri(); ?>/images/border.png') 0 2 0 2 repeat;
-  -o-border-image: url('<?php echo get_template_directory_uri(); ?>/images/border.png') 0 2 0 2 repeat;
-  border-image: url('<?php echo get_template_directory_uri(); ?>/images/border.png') 0 2 0 2 repeat;
+  -moz-border-image: url('/wp-content/themes/magazine//images/border.png') 0 2 0 2 repeat;
+  -webkit-border-image: url('/wp-content/themes/magazine/images/border.png') 0 2 0 2 repeat;
+  -o-border-image: url('/wp-content/themes/magazine/images/border.png') 0 2 0 2 repeat;
+  border-image: url('/wp-content/themes/magazine/images/border.png') 0 2 0 2 repeat;
 }
 .category-container:nth-child(3n + 1) {
   clear: left;
     border-style: solid;
     border-width: 0px 2px 0px 2px;
-    -moz-border-image: url('<?php echo get_template_directory_uri(); ?>/images/border.png') 0 2 0 2 repeat;
-    -webkit-border-image: url('<?php echo get_template_directory_uri(); ?>/images/border.png') 0 2 0 2 repeat;
-    -o-border-image: url('<?php echo get_template_directory_uri(); ?>/images/border.png') 0 2 0 2 repeat;
-    border-image: url('<?php echo get_template_directory_uri(); ?>/images/border.png') 0 2 0 2 repeat;
+    -moz-border-image: url('/wp-content/themes/magazine/images/border.png') 0 2 0 2 repeat;
+    -webkit-border-image: url('/wp-content/themes/magazine/images/border.png') 0 2 0 2 repeat;
+    -o-border-image: url('/wp-content/themes/magazine/images/border.png') 0 2 0 2 repeat;
+    border-image: url('/wp-content/themes/magazine/images/border.png') 0 2 0 2 repeat;
   }
 .category-container h1 {
   padding: 10px 0px;
@@ -455,11 +418,3 @@ li.slide-nav-item {
 
   color: rgba(224, 55, 138, 1.0);
 }
-
-
-<?php $buffer = ob_get_contents();
-ob_end_clean(); ?>
-
-<!-- slideshow-css -->
-<style type='text/css' rel="stylesheet" media="all"><?php echo $buffer; ?></style>
-<!-- // end slideshow-css -->

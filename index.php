@@ -47,13 +47,6 @@ get_header(); ?>
     <?php get_footer(); ?>
     
   </div><!--//outer-->
-  
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  
-  <?php if ( is_front_page() ) : ?>
-  	  <script src="<?php echo get_template_directory_uri() . "/js/slideshow.js" ?>" type="text/javascript"></script>
-  <?php endif; ?>
-  
 </body>
 
 </html>

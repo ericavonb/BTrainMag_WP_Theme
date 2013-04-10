@@ -1,0 +1,61 @@
+
+a,
+.promo_text,
+#commentlist .commentmetadata {
+    color: #222;
+}
+
+h2, h3, h4, h5, h6,
+h3 a, h4 a, h5 a, h6 a,
+.menu-contact,
+.promo_text {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+
+h3 a, h4 a, h5 a, h6 a,
+#commentlist cite {
+  color: #000;
+}
+
+.menu-contact {
+    color: #ccc;
+}
+
+
+
+a:hover {
+  color: #000;
+}
+
+
+ttent_0 {
+  background-color: rgba(255,255,255, 0.9);
+  width: 100%;
+  clear: left;
+  margin: 0px auto;
+  -webkit-box-shadow:  0px 0px 5px 1px rgba(0, 0, 0, .5);
+  box-shadow:  0px 0px 5px 1px rgba(0, 0, 0, .5);
+  
+}
+
+.content_1 {
+  width: 1140px;
+  margin: 0px auto;
+}
+
+
+.main_container {
+  width: 740px;
+  margin: 0px auto;
+  position:relative;
+}
+#top {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 0px;
+    height: 90px;
+    z-index: 0;
+    height: 0px;
+}

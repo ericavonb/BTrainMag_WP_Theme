@@ -11,12 +11,12 @@
 	*	(Google: WordPress Plugin Regenerate Thumbnails)
 	*/
 	
-	set_post_thumbnail_size( 125, 125, true ); // Default Thumbnail ( post-thumbnail )
+	set_post_thumbnail_size( 300, 200, true ); // Default Thumbnail ( post-thumbnail )
 
-	add_image_size( 'grid_3', 222, 140, true );
-	add_image_size( 'grid_4', 306, 175, true );
-	add_image_size( 'grid_6', 474, 300, true );	
-	add_image_size( 'grid_8', 642, 5000, false );
-	add_image_size( 'grid_12', 978, 5000, false );
+	add_image_size( 'slideshow', 950, 400, false);
+
+	add_image_size( 'small', 200, 145, true);
+
+	add_image_size( 'exlarge', 670, 375, false);
 	
 ?>

@@ -56,11 +56,9 @@
                 </a>
               </h2>
         			
-            	<?php if (has_post_thumbnail()) {
-    				          $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
-    				   ?>
-              <a href="<?php the_permalink(); ?>" class="thumbnail-image" style="background-image: url('<?php echo $src[0]; ?>');">
-              </a>
+            	<?php if (has_post_thumbnail()) { 
+			?>
+			  <?php echo btm_get_featured_image( 'post-thumbnail' , '' ); ?>
               
             	<?php } else { ?>
             	  
@@ -75,7 +73,7 @@
             </div><!--//post-->
       		
         	  <?php endwhile; // End the loop. ?>
-
+		  <a href="<?php echo get_category_link($cat->cat_ID); ?>" class="more_category">Read more in <?php echo $cat->name; ?></a>
       	</div><!--//category-container-->
     	
       <?php endif; ?>
