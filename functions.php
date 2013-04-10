@@ -145,6 +145,7 @@ function btm_page_link($page, $cat) {
 //add_action('pre_get_posts', 'url_fixer');
 $content = add_filter('the_content', 'content');
 function content($content) {
-  return preg_replace('/<p>([^a-zA-Z0-9]*[a-zA-Z0-9])/', '<div class="first_letter">${1}</div><p>', $content, 1);
+  return preg_replace('/<p[^>]*>([^a-zA-Z0-9]*[a-zA-Z0-9])/', '<div class="firs\
+t_letter">${1}</div><p>', $content, 1);
 };
 ?>
