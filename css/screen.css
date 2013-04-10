@@ -327,7 +327,10 @@ a.more-link,
 a#footer_logo, a#footer_logo:hover {
     color: rgba(0,0,0,0);
 }
-
+#footer p {
+    color: #777;
+    font-size: 14px;
+}
 /*                                 Widgets                                   */
 /* ------------------------------------------------------------------------- */
 .widget {
